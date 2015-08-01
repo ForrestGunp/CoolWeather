@@ -28,7 +28,12 @@ public class HttpUtil {
 						builder.append(line);
 					}
 					if (listener != null) {
-						listener.onFinish(builder.toString());
+						String response = builder.toString();
+						if (response.startsWith("\ufeff")) {
+							response = response.substring(1);
+						}
+
+						listener.onFinish(response);
 					}
 
 				} catch (Exception e) {

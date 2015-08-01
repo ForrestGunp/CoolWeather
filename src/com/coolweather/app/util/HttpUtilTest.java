@@ -5,7 +5,8 @@ import android.util.Log;
 
 public class HttpUtilTest extends AndroidTestCase {
 	public void connectionUrl() {
-		String address = "http://www.weather.com.cn/data/list3/city.xml";
+		String address = "http://www.weather.com.cn/data/cityinfo/101190404.html";
+		
 		HttpUtil.sendRequestMessage(address, new HttpCallBackListener() {
 
 			@Override
